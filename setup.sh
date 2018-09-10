@@ -68,7 +68,9 @@ echo 'PATH=$PATH:/usr/local/pfring/bin:/usr/local/pfring/sbin' >> /etc/bash.bash
 
 #Get BRO
 cd ../../../
-git clone -b 'v2.5.1' --recursive https://github.com/bro/bro.git
+wget https://www.bro.org/downloads/bro-2.5.5.tar.gz
+tar -xzvf bro-2.5.5.tar.gz
+mv bro-2.5.5 bro
 cd bro
 ./configure --prefix=/usr/local/bro --with-pcap=/usr/local/pfring
 make $MAKE_FLAGS
